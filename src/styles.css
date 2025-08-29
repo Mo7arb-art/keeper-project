@@ -1,0 +1,170 @@
+/* Reset and base styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-family: "Montserrat", sans-serif;
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: #f4f4f4;
+  padding: 0 16px;
+  min-height: 100vh;
+}
+
+/* Header */
+header {
+  background-color: #f5ba13;
+  padding: 20px 32px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  border-radius: 0 0 12px 12px;
+  text-align: center;
+}
+
+header h1 {
+  color: #fff;
+  font-family: "McLaren", cursive;
+  font-weight: 300;
+  font-size: 2rem;
+}
+
+/* Footer */
+footer {
+  text-align: center;
+  padding: 12px 0;
+  color: #aaa;
+  font-size: 0.9rem;
+}
+
+/* Notes Grid */
+.notes-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 16px;
+  margin: 32px auto;
+  max-width: 1200px;
+}
+
+/* Note Card */
+.note {
+  background-color: #fff;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  padding: 16px;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.note:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.15);
+}
+
+.note h1 {
+  font-size: 1.2em;
+  margin-bottom: 8px;
+  color: #333;
+}
+
+.note p {
+  font-size: 1em;
+  margin-bottom: 12px;
+  color: #555;
+  white-space: pre-wrap;
+  word-wrap: break-word;
+}
+
+/* Note Buttons */
+.note button {
+  background-color: transparent;
+  color: #f78a25;
+  font-size: 0.95rem;
+  padding: 6px 10px;
+  margin-left: 6px;
+  border-radius: 6px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.note button:hover {
+  background-color: #fef1e4;
+  color: #d66a00;
+  transform: translateY(-1px);
+}
+
+/* Done Note Style */
+.note.done {
+  opacity: 0.6;
+  text-decoration: line-through;
+  background-color: #fdf6e3;
+}
+
+/* Form */
+form {
+  background-color: #fff;
+  padding: 20px;
+  margin: 30px auto;
+  width: 100%;
+  max-width: 500px;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  position: relative; /* ✅ Fixes button positioning */
+}
+
+form input,
+form textarea {
+  width: 100%;
+  border: none;
+  padding: 10px;
+  margin-bottom: 12px;
+  font-size: 1rem;
+  border-radius: 6px;
+  background-color: #f9f9f9;
+  transition: background-color 0.2s ease;
+}
+
+form input:focus,
+form textarea:focus {
+  background-color: #fff;
+  outline: 2px solid #f5ba13;
+}
+
+/* Add Button */
+form button {
+  background-color: #f5ba13;
+  color: #fff;
+  border: none;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+  cursor: pointer;
+  position: absolute;
+  right: 20px;
+  bottom: 20px; /* ✅ Changed from -20px */
+  transition: background-color 0.2s ease;
+}
+
+form button:hover {
+  background-color: #e0a800;
+}
+
+/* Responsive Tweaks */
+@media (max-width: 600px) {
+  header h1 {
+    font-size: 1.5rem;
+  }
+
+  form {
+    padding: 16px;
+  }
+
+  form button {
+    width: 36px;
+    height: 36px;
+    right: 16px;
+    bottom: 16px;
+  }
+}
